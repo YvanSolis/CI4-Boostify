@@ -213,21 +213,8 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
-    <header>
-        <div class="left">
-            <img src="/assets/boostifylogo.png" alt="Boostify Logo">
-            <h1>Boostify</h1>
-        </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="/moodboard">Moodboard</a>
-            <a href="/roadmap">Roadmap</a>
-            <a href="/login" class="btn-login">Login</a>
-        </nav>
-    </header>
+    <?= view('components/header.php') ?>
 
     <!-- HERO -->
     <section class="hero" id="about">
