@@ -219,19 +219,7 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-        <div class="left">
-            <img src="/assets/boostifylogo.png" alt="Boostify Logo">
-            <h1>Boostify | Roadmap</h1>
-        </div>
-        <nav>
-            <a href="/#about">About</a>
-            <a href="/#services">Services</a>
-            <a href="/moodboard">Moodboard</a>
-            <a href="/roadmap">Roadmap</a>
-            <a href="/login" class="btn-login">Login</a>
-        </nav>
-    </header>
+    <?= view('components/header.php') ?>
 
     <main>
         <div class="roadmap-container">
@@ -308,9 +296,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        © 2025 <span>Boostify</span>. All rights reserved.
-    </footer>
+    <?= view('components/footer') ?>
 
 </body>
 
