@@ -223,77 +223,78 @@
 
     <main>
         <div class="roadmap-container">
-            <div class="roadmap-card">
-                <h3>User CRUD</h3>
-                <p>Manage user accounts for customers, boosters, and admins (create, view, update, delete).</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'User CRUD',
+                'description' => 'Manage user accounts for customers, boosters, and admins (create, view, update, delete).',
+                'status' => 'Planned',
+                'priority' => 'High'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Service CRUD</h3>
-                <p>Add and manage boosting or coaching services with prices and detailed descriptions.</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Service CRUD',
+                'description' => 'Add and manage boosting or coaching services with prices and detailed descriptions.',
+                'status' => 'Planned',
+                'priority' => 'High'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Request CRUD</h3>
-                <p>Handle bookings, schedules, and progress tracking for customer requests efficiently.</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Request CRUD',
+                'description' => 'Handle bookings, schedules, and progress tracking for customer requests efficiently.',
+                'status' => 'Planned',
+                'priority' => 'High'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Email Verification</h3>
-                <p>Verify user emails during signup for security and spam prevention.</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: Medium</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Email Verification',
+                'description' => 'Verify user emails during signup for security and spam prevention.',
+                'status' => 'Planned',
+                'priority' => 'Medium'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Account Info Update</h3>
-                <p>Allow users to edit profile information, passwords, and payment details.</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: Medium</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Account Info Update',
+                'description' => 'Allow users to edit profile information, passwords, and payment details.',
+                'status' => 'Planned',
+                'priority' => 'Medium'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Booking Progress Tracker</h3>
-                <p>Show customers real-time updates on their current service or coaching session.</p>
-                <span class="status Planned">Planned</span>
-                <p class="priority">Priority: Medium</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Booking Progress Tracker',
+                'description' => 'Show customers real-time updates on their current service or coaching session.',
+                'status' => 'Planned',
+                'priority' => 'Medium'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Booster Management</h3>
-                <p>Assign boosters to clients and track their activities and performance metrics.</p>
-                <span class="status Backlog">Backlog</span>
-                <p class="priority">Priority: Medium</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Booster Management',
+                'description' => 'Assign boosters to clients and track their activities and performance metrics.',
+                'status' => 'Backlog',
+                'priority' => 'Medium'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Payment History</h3>
-                <p>Record and display all transactions for customers and boosters.</p>
-                <span class="status Backlog">Backlog</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Payment History',
+                'description' => 'Record and display all transactions for customers and boosters.',
+                'status' => 'Backlog',
+                'priority' => 'High'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Image Upload & Middleware</h3>
-                <p>Implement secure file uploads and middleware authorization for images and files.</p>
-                <span class="status Backlog">Backlog</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Image Upload & Middleware',
+                'description' => 'Implement secure file uploads and middleware authorization for images and files.',
+                'status' => 'Backlog',
+                'priority' => 'High'
+            ]) ?>
 
-            <div class="roadmap-card">
-                <h3>Employee & Admin Accounts (RBAC)</h3>
-                <p>Role-based access for staff and admin functions for secure system control.</p>
-                <span class="status Backlog">Backlog</span>
-                <p class="priority">Priority: High</p>
-            </div>
+            <?= view('components/cards/roadmap_card', [
+                'title' => 'Employee & Admin Accounts (RBAC)',
+                'description' => 'Role-based access for staff and admin functions for secure system control.',
+                'status' => 'Backlog',
+                'priority' => 'High'
+            ]) ?>
         </div>
     </main>
+
 
     <!-- FOOTER -->
     <?= view('components/footer') ?>
