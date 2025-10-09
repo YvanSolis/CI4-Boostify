@@ -166,16 +166,19 @@
         <form method="POST" action="">
             <input type="email" name="email" placeholder="Email Address" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" class="btn-login">Login</button>
+            <?= view('components/buttons/button_primary', ['type' => 'form']) ?>
         </form>
 
         <div class="signup-link">
-            Don't have an account? <a href="/signup">Sign up here</a>
+            Don't have an account?
+            <?= view('components/buttons/button_primary', ['action' => 'signup', 'type' => 'link', 'href' => '/signup']) ?>
         </div>
 
+
         <div class="back-link">
-            <a href="/">← Back to Home</a>
+            <?= view('components/buttons/button_link') ?>
         </div>
+
     </div>
 
 </body>
