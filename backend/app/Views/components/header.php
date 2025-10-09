@@ -13,6 +13,6 @@
         <a href="/#home">Home</a>
         <a href="/moodboard">Moodboard</a>
         <a href="/roadmap">Roadmap</a>
-        <?= view('components/buttons/button_login', ['href' => '/login']) ?>
+        <?= view('components/buttons/button_primary', ['action' => 'login', 'type' => 'link', 'href' => '/login']) ?>
     </nav>
 </header>

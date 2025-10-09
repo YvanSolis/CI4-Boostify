@@ -412,22 +412,14 @@
         <!-- BUTTONS -->
         <section>
             <h2>Buttons</h2>
-            <div class="button-set light">
+            <div class="dark-mode">
                 <div class="btn-group">
-                    <button class="btn primary">Primary</button>
-                    <button class="btn secondary">Secondary</button>
-                    <button class="btn border">Border</button>
-                    <button class="btn disabled" disabled>Disabled</button>
+                    <?= view('components/buttons/button_primary', ['action' => 'primary', 'label' => 'Primary', 'href' => '#', 'dark' => true]) ?>
+                    <?= view('components/buttons/button_secondary', ['label' => 'Secondary', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_border', ['label' => 'Border', 'href' => '#']) ?>
+                    <?= view('components/buttons/button_primary', ['action' => 'primary', 'label' => 'Disabled', 'href' => '#', 'disable' => true]) ?>
                 </div>
-
-                <div class="dark-mode">
-                    <div class="btn-group">
-                        <button class="btn primary">Primary</button>
-                        <button class="btn secondary">Secondary</button>
-                        <button class="btn border">Border</button>
-                        <button class="btn disabled" disabled>Disabled</button>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 
@@ -440,13 +432,11 @@
                     'excerpt' => 'One-on-one Valorant coaching to help players improve aim, strategy, and mindset.',
                     'href' => '#'
                 ]) ?>
-
                 <?= view('components/cards/moodboard_card', [
                     'title' => 'Fast Boosting',
                     'excerpt' => 'Professional boosters available 24/7 to help you climb ranks safely and fast.',
                     'href' => '#'
                 ]) ?>
-
                 <?= view('components/cards/moodboard_card', [
                     'title' => 'Trusted by Gamers',
                     'excerpt' => 'Hundreds of satisfied clients with proven results across all regions.',

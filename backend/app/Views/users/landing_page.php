@@ -207,6 +207,74 @@
                 font-size: 1em;
             }
 
+
+            /* CTA SECTION */
+            .cta {
+                background: linear-gradient(135deg, #ff4655, #e63946);
+                color: #fff;
+                text-align: center;
+                padding: 80px 20px;
+                margin-top: 60px;
+                border-top: 3px solid #ff6a75;
+                border-bottom: 3px solid #ff6a75;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cta::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1600&q=80') center/cover;
+                opacity: 0.15;
+                z-index: 0;
+            }
+
+            .cta-content {
+                position: relative;
+                z-index: 2;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .cta h2 {
+                font-family: 'Poppins';
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+
+            .cta p {
+                font-family: 'Open Sans';
+                font-size: 1.1em;
+                margin-bottom: 35px;
+                line-height: 1.7em;
+            }
+
+            /* CTA Button */
+            .btn-cta {
+                display: inline-block;
+                background-color: #1e1e1e;
+                color: #ff4655;
+                font-family: 'Poppins';
+                font-weight: 600;
+                font-size: 1.05em;
+                padding: 12px 28px;
+                border-radius: 6px;
+                text-decoration: none;
+                transition: 0.3s ease;
+            }
+
+            .btn-cta:hover {
+                background-color: #ff6a75;
+                color: #fff;
+                transform: translateY(-2px);
+            }
+
+
             /* FOOTER */
             footer {
                 background-color: #141416;
@@ -260,6 +328,14 @@
                 ]) ?>
             </div>
         </section>
+
+        <!-- CTA SECTION -->
+        <?= view('components/cta', [
+            'title' => 'Ready to Boost Your Valorant Journey?',
+            'description' => 'Join thousands of players who trust Boostify to reach their dream rank and improve their gameplay. Whether you need rank boosting or personalized coaching, we’ve got your back.',
+            'buttonHref' => '/login',
+            'buttonLabel' => 'Get Started Now'
+        ]) ?>
 
         <!-- FOOTER -->
         <?= view('components/footer') ?>

@@ -22,7 +22,7 @@
         <?php endif; ?>
 
         <div class="btn-container">
-            <?= view('components/buttons/button_learnmore', ['href' => $href ?? '#']) ?>
+            <?= view('components/buttons/button_primary', ['action' => 'learnmore', 'href' => '/login', 'label' => 'Learn More']) ?>
         </div>
     </div>
 </article>

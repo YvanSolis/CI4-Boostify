@@ -163,7 +163,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="confirm" placeholder="Confirm Password" required>
 
-            <button type="submit" class="btn-signup">Sign Up</button>
+            <?= view('components/buttons/button_primary', ['action' => 'signup', 'type' => 'form']) ?>
         </form>
 
         <div class="login-link">
@@ -171,7 +171,7 @@
         </div>
 
         <div class="back-link">
-            <a href="/">← Back to Home</a>
+            <?= view('components/buttons/button_link') ?>
         </div>
     </div>
 
