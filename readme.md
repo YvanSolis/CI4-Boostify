@@ -8,13 +8,12 @@
     <img src="backend/public/assets/profile.png" alt="pogi" width="130" height="100">
   </a>
 <!-- * Title Section -->
-  <h3 align="center">AD - CI4 Template</h3>
+  <h3 align="center">Boositfy</h3>
 </div>
 
 <!-- * Description Section -->
 <div align="center">
-This repository is a beginner-friendly CodeIgniter 4 template.
-It helps teams quickly bootstrap backend + frontend projects, with simple sample modules that show how to extend the system.
+  Boostify is a website that offers Valorant boosting and coaching services. It helps players rank up faster or improve their skills through professional boosters and coaches.
 </div>
 
 <br/>
@@ -86,13 +85,6 @@ These are **sample modules** included (or suggested) for learning how to add fea
 #### Framework/Library
 
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-EF4223?style=for-the-badge\&logo=codeigniter\&logoColor=white)
-
-#### Databases
-
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge\&logo=mysql\&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge\&logo=firebase\&logoColor=black)
 
 <!-- ! Keep only the used technology -->
 
@@ -179,6 +171,5 @@ AD-ProjectName/
 | ----------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | ChatGPT                 | General AI assistance for planning application architecture and docs. | [https://chat.openai.com](https://chat.openai.com)          |
 | Pinterest Design Boards | Inspiration for color schemes, typography, and component layouts.     | [https://www.pinterest.com](https://www.pinterest.com)                     |
-| Google Photos (Assets)  | Stock imagery and graphics used in UI mockups and documentation.      | [https://photos.google.com](https://photos.google.com)                     |                                     |
-
+| 
 <!-- ! Add what tools aided you -->
