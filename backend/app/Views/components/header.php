@@ -4,15 +4,6 @@
 // $brandTagline: string|null
 // $logo: object
 ?>
-<?php
-$nav = [
-    ['label' => 'home', 'href' => '/'],
-    ['label' => 'moodboard', 'href' => '/moodboard'],
-    ['label' => 'roadmap', 'href' => '/roadmap'],
-    ['label' => 'Login', 'href' => '/login'],
-];
-
-?>
 <header>
     <div class="left">
         <img src="/assets/boostifylogo.png" alt="Boostify Logo">
@@ -22,6 +13,6 @@ $nav = [
         <a href="/#home">Home</a>
         <a href="/moodboard">Moodboard</a>
         <a href="/roadmap">Roadmap</a>
-        <a href="/login" class="btn-login">Login</a>
+        <?= view('components/buttons/button_login', ['href' => '/login']) ?>
     </nav>
 </header>

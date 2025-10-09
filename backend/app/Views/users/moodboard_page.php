@@ -435,25 +435,26 @@
         <section>
             <h2>Card Samples</h2>
             <div class="cards">
-                <div class="card">
-                    <h3>Elite Coaching</h3>
-                    <p>One-on-one Valorant coaching to help players improve aim, strategy, and mindset.</p>
-                    <a href="#">Read more</a>
-                </div>
+                <?= view('components/cards/moodboard_card', [
+                    'title' => 'Elite Coaching',
+                    'excerpt' => 'One-on-one Valorant coaching to help players improve aim, strategy, and mindset.',
+                    'href' => '#'
+                ]) ?>
 
-                <div class="card">
-                    <h3>Fast Boosting</h3>
-                    <p>Professional boosters available 24/7 to help you climb ranks safely and fast.</p>
-                    <a href="#">Read more</a>
-                </div>
+                <?= view('components/cards/moodboard_card', [
+                    'title' => 'Fast Boosting',
+                    'excerpt' => 'Professional boosters available 24/7 to help you climb ranks safely and fast.',
+                    'href' => '#'
+                ]) ?>
 
-                <div class="card">
-                    <h3>Trusted by Gamers</h3>
-                    <p>Hundreds of satisfied clients with proven results across all regions.</p>
-                    <a href="#">Read more</a>
-                </div>
+                <?= view('components/cards/moodboard_card', [
+                    'title' => 'Trusted by Gamers',
+                    'excerpt' => 'Hundreds of satisfied clients with proven results across all regions.',
+                    'href' => '#'
+                ]) ?>
             </div>
         </section>
+
 
         <!-- LOGOS -->
         <section>
