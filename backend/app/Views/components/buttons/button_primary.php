@@ -2,7 +2,7 @@
 // Component: components/buttons/button_primary.php
 // Data contract:
 // $type: string|null ('form' or 'link')
-// $action: string|null ('login', 'signup', 'cta', 'primary', 'learnmore')
+// $action: string|null ('login', 'logout', 'signup', 'cta', 'primary', 'learnmore')
 // $href: string|null (used for link buttons or CTA/primary links)
 // $label: string|null (used for CTA/primary/learnmore button text)
 // $dark: bool|null (for primary moodboard style)
@@ -27,6 +27,19 @@ $disable = $disable ?? false;
         <!-- LINK LOGIN BUTTON -->
         <a href="<?= esc($href) ?>" class="btn-login">
             Login
+        </a>
+    <?php endif; ?>
+
+<?php elseif ($action === 'logout'): ?>
+    <?php if ($type === 'form'): ?>
+        <!-- FORM LOGOUT BUTTON (same design as login) -->
+        <button type="submit" class="btn-login">
+            Logout
+        </button>
+    <?php else: ?>
+        <!-- LINK LOGOUT BUTTON (same design as login) -->
+        <a href="<?= esc($href) ?>" class="btn-login">
+            Logout
         </a>
     <?php endif; ?>
 
