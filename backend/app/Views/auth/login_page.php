@@ -4,17 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup: Boostify</title>
+    <title>Login: Boostify</title>
     <link rel="shortcut icon" type="image/png" href="/assets/boostifyicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- INTERNAL CSS -->
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Open Sans";
             letter-spacing: 0.3px;
         }
 
@@ -26,6 +24,7 @@
             background: url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             position: relative;
             color: white;
+            font-family: 'Open Sans';
         }
 
         body::after {
@@ -39,7 +38,7 @@
             z-index: 1;
         }
 
-        .signup-container {
+        .login-container {
             position: relative;
             z-index: 2;
             background-color: rgba(25, 25, 25, 0.95);
@@ -50,48 +49,61 @@
             text-align: center;
         }
 
-        .signup-container img {
+        .login-container img {
             width: 80px;
             height: 80px;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
         }
 
-        .signup-container img:hover {
+        .login-container img:hover {
             transform: scale(1.1);
         }
 
-        .signup-container h1 {
-            font-family: "Poppins";
+        .login-container h1 {
+            font-family: 'Poppins';
             color: #ff4655;
             margin-bottom: 10px;
-            font-size: 2em;
-            letter-spacing: 1px;
+            font-size: 2.2em;
+            letter-spacing: 1.2px;
+            font-weight: 700;
         }
 
-        .signup-container p {
-            color: #aaa;
+        .login-container p {
+            color: #ccc;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-size: 1.05em;
+            font-family: 'Open Sans';
+        }
+
+        .field-group {
+            text-align: left;
+            margin-top: 5px;
         }
 
         input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
+            margin: 10px 0 5px 0;
             background-color: #222;
             border: 1px solid #444;
             border-radius: 5px;
             color: #fff;
-            font-size: 1.1em;
+            font-size: 1.05em;
             outline: none;
+            font-family: 'Open Sans';
         }
 
         input:focus {
             border-color: #ff4655;
         }
 
-        .btn-signup {
+        /* extra border color when there's a validation error */
+        .input-error {
+            border-color: #ff6f61;
+        }
+
+        .btn-login {
             width: 100%;
             background-color: #ff4655;
             border: none;
@@ -101,48 +113,49 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: 0.3s;
-            font-family: "Poppins";
+            font-family: 'Poppins';
         }
 
-        .btn-signup:hover {
+        .btn-login:hover {
             background-color: #e03a4d;
         }
 
-        .message {
-            margin-top: 15px;
+        .error {
             color: #ff6f61;
-            font-size: 0.95em;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-family: 'Open Sans';
         }
 
-        .login-link {
+        .signup-link {
             margin-top: 20px;
             display: block;
             color: #aaa;
             font-size: 1em;
+            font-family: 'Open Sans';
         }
 
-        .login-link a {
+        .signup-link a {
             color: #ff4655;
             text-decoration: none;
             font-weight: bold;
-            font-family: "Poppins";
+            font-family: 'Poppins';
         }
 
-        .login-link a:hover {
+        .signup-link a:hover {
             text-decoration: underline;
         }
 
-        /* Back link styling (plain) */
         .back-link {
             margin-top: 10px;
             display: block;
-            font-size: 1em;
+            font-size: 0.95em;
+            font-family: 'Open Sans';
         }
 
         .back-link a {
             color: #aaa;
             text-decoration: none;
-            font-family: "Poppins";
         }
 
         .back-link a:hover {
@@ -153,26 +166,58 @@
 
 <body>
 
-    <div class="signup-container">
+    <div class="login-container">
         <img src="/assets/boostifylogo.png" alt="Boostify Logo">
         <h1>Boostify</h1>
-        <p>Create your account and start your climb!</p>
+        <p>Welcome back! Login to your account.</p>
 
-        <form method="POST" action="">
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirm" placeholder="Confirm Password" required>
+        <?php if (isset($error)) : ?>
+            <p class="error"><?= esc($error) ?></p>
+        <?php endif; ?>
 
-            <?= view('components/buttons/button_primary', ['action' => 'signup', 'type' => 'form']) ?>
+        <form method="POST" action="/login" novalidate>
+            <?= csrf_field() ?>
+
+            <!-- Email -->
+            <div class="field-group">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value="<?= esc($old['email'] ?? '') ?>"
+                    class="<?= !empty($errors['email']) ? 'input-error' : '' ?>"
+                    required>
+                <?php if (!empty($errors['email'])): ?>
+                    <p class="error"><?= esc($errors['email']) ?></p>
+                <?php endif; ?>
+            </div>
+
+            <!-- Password -->
+            <div class="field-group">
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    class="<?= !empty($errors['password']) ? 'input-error' : '' ?>"
+                    required>
+                <?php if (!empty($errors['password'])): ?>
+                    <p class="error"><?= esc($errors['password']) ?></p>
+                <?php endif; ?>
+            </div>
+
+            <!-- Submit button (kept as your component, assuming it renders a submit button) -->
+            <?= view('components/buttons/button_primary', ['type' => 'form']) ?>
         </form>
 
-        <div class="login-link">
-            Already have an account? <a href="/login">Login here</a>
+        <div class="signup-link">
+            Don't have an account?
+            <?= view('components/buttons/button_primary', ['action' => 'signup', 'type' => 'link', 'href' => '/signup']) ?>
         </div>
 
         <div class="back-link">
             <?= view('components/buttons/button_link') ?>
         </div>
+
     </div>
 
 </body>
