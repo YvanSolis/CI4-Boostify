@@ -70,7 +70,17 @@ class Auth extends BaseController
             //'display_name' => $this->createDisplayName($user),
         ]);
 
-        return redirect()->to('/');
+        $type = strtolower($user->type ?? 'client');
+
+        if ($type === 'employee') {
+            // Managers go to admin dashboard
+            return redirect()->to('/admin/dashboard_page');
+        }
+
+        if ($type === 'client') {
+            // Regular clients go to home page
+            return redirect()->to('/');
+        }
     }
 
     /**
