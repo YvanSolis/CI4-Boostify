@@ -17,4 +17,4 @@ $routes->post('/login', 'Auth::login');
 $routes->post('/logout', 'Auth::logout');
 $routes->post('/signup', 'Auth::signup');
 
-$routes->get('/admin/dashboard_page', 'Admin::showDashboard');
+$routes->get('/admin/dashboard_page', 'Admin::dashboard_page');
