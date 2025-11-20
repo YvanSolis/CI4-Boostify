@@ -123,8 +123,14 @@
         <a href="admin_services.php">Services</a>
         <a href="admin_accounts.php">Accounts</a>
         <a href="admin_requests.php">Requests</a>
-        <button class="logout">Logout</button>
+
+        <!-- Fixed Logout -->
+        <form action="/logout" method="post">
+            <?= csrf_field() ?>
+            <button type="submit" class="logout">Logout</button>
+        </form>
     </div>
+
 
     <div class="main-content">
         <h1>Dashboard Overview</h1>
